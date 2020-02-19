@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Plaster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600&display=swap" rel="stylesheet">
+
+    <title>Dunk Engine - Results</title>
+</head>
+<body onload="setLaddage()">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1em;
+        }
+
+        h1 {
+            font-size: 3em;
+            font-family: 'Plaster', sans-serif;
+            font-weight: bold;
+        }
+
+        div.content {
+            color: black;
+        }
+
+        div.img-changer {
+            height: 50px;
+            width: 223px;
+            background-size: cover;
+            background-image: url('../../static/aggregate_1.png');
+            margin: 0 auto;
+        }
+
+        div.img-changer:hover {
+            background-image: url('../../static/aggregate_2.png');
+        }
+
+        div.img-changer:active {
+            background-image: url('../../static/aggregate_1.png');
+        }
+
+        .form__field {
+            background: transparent;
+            border: 1px;
+        }
+
+        .form__field::placeholder {
+            text-align: center;
+        }
+
+        table.bookmarks {
+            min-width: 400px;
+            padding-right: 0px;
+            padding-left: 0px;
+            padding-bottom: 10px;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .vid-results tr {
+            margin-top: 200px;
+            padding-bottom: 100px;
+        }
+
+        .bookmarks p {
+            padding-left: 20px;
+            margin: 5px 0px;
+            max-width: 500px;
+        }
+
+        .vid-results p {
+            text-align: left;
+        }
+
+        div.header {
+            border-bottom: 1px solid black;
+            background-color: black;
+            padding: 10px 5px;
+        }
+
+        div.filter {
+            float: right;
+        }
+
+        table.vid-results {
+            margin-bottom: 10px;
+            margin-top: 20px;
+            padding: 0px;
+        }
+
+        div.vid-results {
+            float: left;
+            margin-right: auto;
+            margin-left: 3%;
+        }
+
+        .vid-results video {
+            height: 63%;
+        }
+
+        div.filter {
+            border: 1px solid black;
+            margin-bottom: 20px;
+            margin-top: 100px;
+            margin-right: 10%;
+            min-width: 350px;
+            min-height: 500px;
+            font-size: 1.2em;
+            padding: 30px;
+        }
+
+        td.bookmark-container {
+            vertical-align: top;
+            border: 1px black;
+        }
+
+        .bookmarks td {
+            vertical-align: middle;
+            text-align: right;
+            padding: 4px;
+        }
+
+        .bookmarks th {
+            vertical-align: middle;
+            text-align: right;
+            background-color: darkblue;
+            color: white;
+            padding: 6px;
+        }
+
+        div.filter div {
+            border: 2px solid black;
+        }
+
+        #current {
+            background-color: lightblue;
+        }
+
+        .bookmarks tr {
+            cursor: pointer;
+        }
+
+
+    </style>
+
+
+    <div class="container">
+
+        <div class="header">
+            <a href="index.html" alt="Home"><img style="z-index: 3;" src="../../static/logo_dunk_engine_white.png" alt="Dunk Engine" height="100"></a>
+        </div>
+  
+        <div class='content'>
+            <div class='vid-results'>
+                <table class="vid-results" style="padding: 0px;">
+                    <tr>
+                        <td>
+                            <p style="text-align: left; margin: 0px; border: 0px;">Results for <strong>Damian Lillard, 3PM, Distance >36FT, Descending Order:
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                
+                                </strong><span style="cursor: pointer; position: relative; top: 15px; font-size: 0.65em; margin-bottom: -15px;">&nbsp;&nbsp;<a href="dame-3pt-stitched.mp4" alt="Download" >Download<img src="download.svg" height="25"></a></span></p>
+                        </td>
+                    
+                    </tr>
+                </table>
+
+                <table class="player">
+                    <tr>
+                        <td>
+                            <video id="stitched-video" controls autoplay muted>
+                                <source src="dame-3pt-stitched.mp4" type="video/mp4">
+                            </video>
+                        </td>
+                        <td class="bookmark-container">
+                            <div style="width: 100%; text-align: center; padding: 0px 0px 10px 0px; font-size: 1.1em;">
+                                <strong>Video Bookmarks:</strong>
+                            </div>
+                            <table cellspacing="0" class="bookmarks">
+                                <tr>
+                                    
+                                    <th><strong>Date</strong></th>
+                                    <th><strong>Home</strong></th>
+                                    <th><strong>Away</strong></th>
+                                    <th><strong>Period</strong></th>
+                                    <th><strong>Start</strong></th>
+                                    <th><strong>End</strong></th>
+                                
+                                </tr>
+                                <tr id="" onclick="link1()">
+                                    <td>01/13/20</td>
+                                    <td>POR</td>
+                                    <td>CHA</td>
+                                    <td>3</td>
+                                    <td>00:02</td>
+                                    <td>00:00</td>
+                                    
+                                </tr>
+                                <tr id="current" onclick="link2()">
+                                    <td>11/23/20</td>
+                                    <td>CLE</td>
+                                    <td>POR</td>
+                                    <td>4</td>
+                                    <td>00:15</td>
+                                    <td>00:12</td>
+                                    
+                                </tr>
+                                <tr id="next" onclick="link3()">
+                                    <td>01/20/20</td>
+                                    <td>POR</td>
+                                    <td>GSW</td>
+                                    <td>2</td>
+                                    <td>00:33</td>
+                                    <td>00:30</td>
+                                    
+                                </tr>
+                                <tr id="next-next" onclick="link4()">
+                                    <td>11/04/20</td>
+                                    <td>GSW</td>
+                                    <td>POR</td>
+                                    <td>2</td>
+                                    <td>03:06</td>
+                                    <td>03:02</td>
+                                    
+                                </tr>
+                                <tr id="next-next-next" onclick="link5()">
+                                    <td>01/07/20</td>
+                                    <td>TOR</td>
+                                    <td>POR</td>
+                                    <td>3</td>
+                                    <td>03:40</td>
+                                    <td>03:37</td>
+                                    
+                                </tr>
+                               
+                                
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+
+
+
+            <!-- Filtering -->
+
+        </div> <!-- Content -->
+
+            <br>
+
+    </div>
+
+    <script type="text/javascript">
+        function proceed() {
+            if (document.getElementById("stitched-video").paused) {
+                return
+            }
+            document.getElementById("current").id = "";
+            document.getElementById("next").id = "current";
+            document.getElementById("next-next").id = "next";
+            document.getElementById("next-next-next").id = "next-next";
+            document.getElementById("last").id = "next-next-next";
+        }
+
+        function setLaddage() {
+            var interval = setInterval(proceed, 4800);
+            document.getElementById("stitched-video").currentTime = 4.8
+        }
+
+        function link1() {
+            location.href = "results.html";
+        }
+
+        function link2() {
+            location.href = "results2.html";
+        }
+
+        function link3() {
+            location.href = "results3.html";
+        }
+
+        function link4() {
+            location.href = "results4.html";
+        }
+
+        function link5() {
+            location.href = "results5.html";
+        }
+    </script>
+   
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Plaster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Plaster|Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600&display=swap" rel="stylesheet">
+    <title>Dunk Engine - Home</title>
+</head>
+<body>
+    <style>
+        body {
+            background-image: url('kobe-reverse-dunk90.jpg');
+            background-size: cover;
+            font-family: 'Montserrat', serif;
+            font-size: 1.5em;
+            
+        }
+
+        h1 {
+            font-size: 3em;
+            font-family: 'Plaster', sans-serif;
+            font-weight: bold;
+        }
+
+        div.middle-box {
+            background-color: rgba(255, 255, 255, 0.5);
+            background-repeat: no-repeat;
+            text-align: center;
+            padding: 30px;
+            -moz-box-shadow: 1px 2px 10px rgba(0,0,0,.5);
+            -webkit-box-shadow: 1px 2px 10px rgba(0,0,0,.5);
+            box-shadow: 1px 2px 10px rgba(0,0,0,.5);
+            border-radius: 1px;
+            color: black;
+        }
+
+        div.img-changer {
+            height: 50px;
+            width: 223px;
+            background-size: cover;
+            background-image: url('aggregate_1.png');
+            margin: 0 auto;
+        }
+
+        div.img-changer:hover {
+            background-image: url('aggregate_2.png');
+        }
+
+        div.img-changer:active {
+            background-image: url('aggregate_1.png');
+        }
+
+        #BgVideo {
+            z-index: -1;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .form__field {
+            background: transparent;
+            border: 1px;
+        }
+
+        .form__field::placeholder {
+            text-align: center;
+        }
+
+        table,td,tr {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+
+    </style>
+
+    <!-- The video -->
+    <img style="z-index: 3" src="../../static/logo_de.png" alt="Dunk Engine" height="120">
+  
+
+    <div class='w3-display-middle middle-box'>
+        <!-- <img src="../../static/logo_de.png" alt="Dunk Engine" height="190"> -->
+        
+        <h1>DUNK ENGINE</h1>
+        <strong>Your personal instant highlight reel.</strong>
+
+        
+
+        <div class="form__group field">
+            <table>
+                <!-- Team Name
+                <tr>
+                    <td style="padding-top: 10px">Team Name:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <select>
+                            <option class="form__field" value="Any Team">Any Team</option>
+                            <option class="form__field" value="Atlanta Hawks">Atlanta Hawks</option>
+                            <option class="form__field" value="Boston Celtics">Boston Celtics</option>
+                            <option class="form__field" value="Brooklyn Nets">Brooklyn Nets</option>
+                            <option class="form__field" value="Charlotte Hornets">Charlotte Hornets</option>
+                            <option class="form__field" value="Golden State Warriors">Golden State Warriors</option>
+                            <option class="form__field" value="Minnesota Timberwolves">Minnesota Timberwolves</option>
+                            <option class="form__field" value="Philadelphia 76ers">Philadelphia 76ers</option>
+                            <option class="form__field" value="Portland Trail Blazers">Portland Trail Blazers</option> 
+                        </select>
+                    </td>
+                </tr> -->
+
+                <!-- Player Name-->
+
+                <tr>
+                    <td style="padding-top: 10px">Search For Anything</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input style="min-width: 100%;" type="text" placeholder="e.g. All Zion Dunks">
+                    </td>
+                </tr>
+                <!-- Category -->
+                <br>
+                
+            </table>
+            
+        </div>
+
+        <br>
+
+        <a href="loading.html"><div class="img-changer"></div></a>
+        <img src="aggregate_2.png" height="0px">
+    </div>
+   
+</body>
+</html>
